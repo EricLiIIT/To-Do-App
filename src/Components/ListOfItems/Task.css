@@ -1,0 +1,7 @@
+#task-container {
+  margin: 0.5em;
+  display: block;
+  border-style: solid;
+  border-radius: 0.5em;
+  width: 40%;
+}
