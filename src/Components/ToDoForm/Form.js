@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Form.css";
 
 const Form = (props) => {
   const [title, setTitle] = useState("");
@@ -22,41 +23,47 @@ const Form = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title</label>
+    <div id="form-container">
+      <form id="form" onSubmit={handleSubmit}>
+        <div id="title">
+          <label id="title-label" htmlFor="title">
+            Title
+          </label>
           <input
             type="text"
-            id="title"
+            id="title-input"
             htmlFor="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="description">Description</label>
+        <div id="description">
+          <label id="description-label" htmlFor="description">
+            Description
+          </label>
           <textarea
             type="textarea"
-            id="description"
+            id="description-input"
             htmlFor="decription"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="status">Status</label>
+        {/* <div id="status">
+          <label id="status-label" htmlFor="status">
+            Status
+          </label>
           <input
             type="checkbox"
-            id="status"
+            id="status-input"
             htmlFor="status"
             value={status}
             onChange={(e) => setStatus(e.target.checked)}
           />
-        </div>
-        <div>
-          <label htmlFor="create" />
-          <button type="submit" id="create" htmlFor="create">
+        </div> */}
+        <div id="create">
+          <label id="create-label" htmlFor="create" />
+          <button type="submit" id="create-input" htmlFor="create">
             Create
           </button>
         </div>

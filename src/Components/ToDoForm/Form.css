@@ -1,0 +1,36 @@
+#form-container {
+  display: flex;
+  justify-content: center;
+}
+
+#form {
+  margin-top: 0.5em;
+  border-style: solid;
+  border-width: 0.1em;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+#title,
+#description,
+#create {
+  display: block;
+}
+
+#title-input,
+#description-input,
+#create-input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#status-input,
+#status {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  justify-content: start;
+}
