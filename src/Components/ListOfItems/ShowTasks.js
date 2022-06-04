@@ -2,8 +2,9 @@ import Task from "./Task";
 import "./ShowTasks.css";
 
 const ShowTasks = (props) => {
-  const deleteFtn = (e) => {
+  const deleteFtn = (id) => {
     console.log("pressed delete");
+    console.log("ID", id);
   };
   return props.taskArray.map((task) => (
     <div id="task-list">
@@ -11,7 +12,7 @@ const ShowTasks = (props) => {
         key={task.id}
         title={task.title}
         description={task.description}
-        deleteFtn={deleteFtn}
+        deleteFtn={() => deleteFtn(task.id)}
       />
     </div>
   ));
