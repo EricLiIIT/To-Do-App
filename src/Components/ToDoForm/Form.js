@@ -10,7 +10,6 @@ const Form = (props) => {
     e.preventDefault();
 
     const task = {
-      id: Math.floor(Math.random() * 100000),
       title: title,
       description: description,
       status: status,
@@ -18,7 +17,6 @@ const Form = (props) => {
 
     console.log("In Form.js");
     // console.log(status);
-    console.log(task.id);
     props.onTaskCreate(task);
   };
 
