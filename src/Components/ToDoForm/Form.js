@@ -14,9 +14,6 @@ const Form = (props) => {
       description: description,
       status: status,
     };
-
-    console.log("In Form.js");
-    // console.log(status);
     props.onTaskCreate(task);
   };
 

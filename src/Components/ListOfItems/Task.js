@@ -2,7 +2,7 @@ import React from "react";
 import "./Task.css";
 
 const Task = (props) => {
-  console.log("In Task.js");
+  // console.log("In Task.js");
   return (
     <div className="task-container" id={props.title}>
       <h3>{props.title}</h3>

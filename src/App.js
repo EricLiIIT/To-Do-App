@@ -5,27 +5,24 @@ import ShowTasks from "./Components/ListOfItems/ShowTasks";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  console.log("In app.js");
 
-  const taskCreationHandler = (task) => {
+  const createTask = (task) => {
     // prevTasks automatically given by react (new var name, but it's just tasksArr that is most recent)
     setTasks((prevTasks) => {
-      console.log("Previous tasks", [...prevTasks]);
       return [task, ...prevTasks]; // A NEW array is returned...
     });
   };
 
-  const deleteTask = (title) => {
-    console.log("In app.js deleting task");
-    console.log("ID of task being deleted", title);
-    const updatedArr = [...tasks].filter((task) => task.title !== title);
-    console.log(updatedArr);
+  const deleteTask = (index) => {
+    console.log("Deleted task at index ", index);
+    const updatedArr = [...tasks];
+    updatedArr.splice(index, 1);
     setTasks(updatedArr);
   };
 
   return (
     <div className="App">
-      <Form onTaskCreate={taskCreationHandler} />
+      <Form onTaskCreate={createTask} />
       <ShowTasks taskArray={tasks} onTaskDelete={deleteTask} />
     </div>
   );
