@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Form.css";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const Form = (props) => {
   const [title, setTitle] = useState("");
@@ -40,6 +41,7 @@ const Form = (props) => {
             type="textarea"
             id="description-input"
             htmlFor="decription"
+            disabled="true"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />

@@ -8,7 +8,12 @@ const Task = (props) => {
       <h3>{props.title}</h3>
       <div id="task-description">{props.description}</div>
       <label htmlFor="delete" />
-      <button htmlFor="delete" type="button" onClick={() => props.onDelete()}>
+      <button
+        htmlFor="delete"
+        id="delete-button"
+        type="button"
+        onClick={() => props.onDelete()}
+      >
         Delete
       </button>
     </div>

@@ -1,10 +1,27 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 label {
   display: flex;
   justify-content: start;
 }
 
 textarea {
-  height: 3rem;
+  height: 5rem;
+  border-style: solid;
+  border-radius: 0.5em;
+  border-width: 0.1em;
+}
+
+input {
+  border-style: solid;
+  border-radius: 0.5em;
+  border-width: 0.1em;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
 }
 
 #form-container {
@@ -15,10 +32,10 @@ textarea {
 #form {
   margin-top: 0.5em;
   padding: 1em;
-  width: 40%;
-  box-shadow: 0.1em 0.1em 0.1em grey;
+  width: 20%;
+  box-shadow: 0.1em 0.1em 0.1em rgb(171, 171, 171);
   border-style: solid;
-  border-width: 0.1em;
+  border-width: 0.15em;
   border-radius: 0.5em;
 }
 
@@ -43,5 +60,5 @@ textarea {
 
 #create-input {
   border-radius: 0.5em 0.5em 0.5em 0.5em;
-  background-color: rgb(255, 222, 185);
+  background-color: rgb(160, 233, 255);
 }
