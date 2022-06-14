@@ -15,6 +15,7 @@ const Form = (props) => {
       description: description,
       status: status,
     };
+
     props.onTaskCreate(task);
   };
 
@@ -41,7 +42,6 @@ const Form = (props) => {
             type="textarea"
             id="description-input"
             htmlFor="decription"
-            disabled="true"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -58,9 +58,9 @@ const Form = (props) => {
             onChange={(e) => setStatus(e.target.checked)}
           />
         </div> */}
-        <div id="create">
+        <div id="create-button-div">
           <label id="create-label" htmlFor="create" />
-          <button type="submit" id="create-input" htmlFor="create">
+          <button type="submit" id="create-button" htmlFor="create">
             Create
           </button>
         </div>

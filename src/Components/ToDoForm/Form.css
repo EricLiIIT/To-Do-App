@@ -8,10 +8,12 @@ label {
 }
 
 textarea {
+  font-family: "Montserrat", sans-serif;
   height: 5rem;
   border-style: solid;
   border-radius: 0.5em;
   border-width: 0.1em;
+  resize: vertical;
 }
 
 input {
@@ -40,16 +42,21 @@ button {
 }
 
 #title,
-#description,
-#create {
+#description {
   display: block;
+}
+
+#create-button-div {
+  display: flex;
+  justify-content: end;
 }
 
 #title-input,
 #description-input,
-#create-input {
+#create-button {
   box-sizing: border-box;
   width: 100%;
+  margin-bottom: 0.5em;
 }
 
 #status-input,
@@ -58,7 +65,8 @@ button {
   align-items: center;
 }
 
-#create-input {
+#create-button {
+  font-family: "Montserrat", sans-serif;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
   background-color: rgb(160, 233, 255);
 }

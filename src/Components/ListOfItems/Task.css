@@ -7,10 +7,25 @@
   width: 20%;
 }
 
-#delete-button {
+#delete-btn-div {
   display: flex;
+  justify-content: end;
+}
+
+#delete-button {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  width: 100%;
-  justify-content: end;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  background-color: rgb(193, 67, 67);
+}
+
+#task-title {
+  display: flex;
+  justify-content: start;
+  margin: 0em;
+}
+
+#task-description {
+  display: flex;
+  justify-content: start;
 }

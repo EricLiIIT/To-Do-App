@@ -8,6 +8,14 @@ function App() {
 
   const createTask = (task) => {
     // prevTasks automatically given by react (new var name, but it's just tasksArr that is most recent)
+    if (!task.title) {
+      alert("Please enter a title in your task");
+      return;
+    }
+    if (!task.description) {
+      alert("Please enter a description in your task");
+      return;
+    }
     setTasks((prevTasks) => {
       return [task, ...prevTasks]; // A NEW array is returned...
     });
