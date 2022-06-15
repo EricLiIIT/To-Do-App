@@ -2,16 +2,38 @@ button {
   cursor: pointer;
 }
 
+input {
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  color: black;
+}
+
 .task-container {
   margin-top: 0.5em;
   display: block;
   border-style: solid;
+  border-width: 0.1em;
   border-radius: 0.5em;
   padding: 1em;
   width: 20%;
 }
 
-#interaction-div {
+.task-input {
+  display: flex;
+  justify-content: start;
+  margin: 0em;
+  border-width: 0;
+}
+
+#task-title {
+  font-size: 1.2em;
+}
+
+#task-description {
+  font-size: 0.8em;
+}
+
+#task-buttons {
   display: flex;
   /* justify-content: space-between; */
   justify-content: end;
@@ -26,6 +48,7 @@ button {
   justify-content: center;
   padding: 0.1em;
   box-sizing: border-box;
+  border-width: 0.1em;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
 }
 
@@ -41,18 +64,6 @@ button {
 
 #delete-button {
   background-color: rgb(207, 84, 84);
-}
-
-#task-title {
-  display: flex;
-  justify-content: start;
-  margin: 0em;
-}
-
-#task-description {
-  display: flex;
-  justify-content: start;
-  font-size: 0.8em;
 }
 
 #task-status {

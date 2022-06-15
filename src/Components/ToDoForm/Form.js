@@ -12,7 +12,6 @@ const Form = (props) => {
       description: description,
       status: "Incomplete",
     };
-
     props.onTaskCreate(task);
   };
 
