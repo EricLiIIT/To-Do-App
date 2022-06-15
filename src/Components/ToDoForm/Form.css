@@ -9,6 +9,7 @@ label {
 
 textarea {
   font-family: "Montserrat", sans-serif;
+  padding: 0.3em;
   height: 5rem;
   border-style: solid;
   border-radius: 0.5em;
@@ -17,6 +18,7 @@ textarea {
 }
 
 input {
+  padding: 0.3em;
   border-style: solid;
   border-radius: 0.5em;
   border-width: 0.1em;

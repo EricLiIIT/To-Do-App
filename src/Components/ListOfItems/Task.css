@@ -21,31 +21,40 @@ input {
 .task-input {
   display: flex;
   justify-content: start;
-  margin: 0em;
-  border-width: 0;
+  border: 0.1rem solid white;
+  transition: 0.5s;
+  padding: 0.1rem 0.1rem;
 }
 
 #task-title {
   font-size: 1.2em;
+  margin-bottom: 0.2em;
+}
+
+#task-title-active {
+  font-size: 1.2em;
+  border: 0.1rem solid grey;
+  transition: 0.5s;
+  margin-bottom: 0.2em;
 }
 
 #task-description {
   font-size: 0.8em;
 }
 
-#task-buttons {
-  display: flex;
-  /* justify-content: space-between; */
-  justify-content: end;
+#task-description-active {
+  font-size: 0.8em;
+  border: 0.1rem solid grey;
+  transition: 0.5s;
 }
 
-#buttons {
+#task-buttons {
   display: flex;
+  justify-content: end;
 }
 
 .buttons {
   display: flex;
-  justify-content: center;
   padding: 0.1em;
   box-sizing: border-box;
   border-width: 0.1em;
@@ -67,14 +76,11 @@ input {
 }
 
 #task-status {
-  display: inline-block;
-  margin-bottom: 0.2em;
-}
-
-#status-button {
   display: flex;
-  justify-content: center;
-  padding: 0.1em;
-  border-radius: 0.5em 0.5em 0.5em 0.5em;
-  background-color: rgb(203, 161, 82);
+  padding: 0.3em;
+  border: 0.1rem solid white;
+  margin-right: auto;
+  align-items: center;
+  font-size: 0.5em;
+  font-style: italic;
 }
