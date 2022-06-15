@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+#icon-ref {
+  display: flex;
+  justify-content: center;
+  font-size: 0.7em;
+  width: 100%;
+  bottom: 0.5em;
+  position: absolute;
+  left: 0;
+  right: 0;
+}

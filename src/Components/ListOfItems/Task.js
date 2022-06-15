@@ -20,10 +20,6 @@ const Task = (props) => {
     console.log(isDisabled);
   };
 
-  const updateStatus = () => {
-    setStatus("Complete");
-  };
-
   const completeTask = () => {
     console.log("Completed task");
   };

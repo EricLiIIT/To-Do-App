@@ -13,6 +13,8 @@ const Form = (props) => {
       status: "Incomplete",
     };
     props.onTaskCreate(task);
+    setTitle("");
+    setDescription("");
   };
 
   return (

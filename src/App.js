@@ -33,6 +33,14 @@ function App() {
       <h1>To-Do List</h1>
       <Form onTaskCreate={createTask} />
       <ShowTasks taskArray={tasks} onTaskDelete={deleteTask} />
+      <div id="icon-ref">
+        <a
+          href="https://www.flaticon.com/free-icons/checklist"
+          title="checklist icons"
+        >
+          Checklist icons created by Freepik - Flaticon
+        </a>
+      </div>
     </div>
   );
 }
