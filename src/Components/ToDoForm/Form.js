@@ -1,19 +1,16 @@
 import { useState } from "react";
 import "./Form.css";
-import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const Form = (props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [status, setStatus] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const task = {
       title: title,
       description: description,
-      status: status,
+      status: "Incomplete",
     };
 
     props.onTaskCreate(task);
@@ -23,7 +20,7 @@ const Form = (props) => {
     <div id="form-container">
       <form id="form" onSubmit={handleSubmit}>
         <div id="title">
-          <label id="title-label" htmlFor="title">
+          <label id="title-label" htmlFor="title-input">
             Title
           </label>
           <input
@@ -35,7 +32,7 @@ const Form = (props) => {
           />
         </div>
         <div id="description">
-          <label id="description-label" htmlFor="description">
+          <label id="description-label" htmlFor="description-input">
             Description
           </label>
           <textarea
@@ -46,21 +43,9 @@ const Form = (props) => {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        {/* <div id="status">
-          <label id="status-label" htmlFor="status">
-            Status
-          </label>
-          <input
-            type="checkbox"
-            id="status-input"
-            htmlFor="status"
-            value={status}
-            onChange={(e) => setStatus(e.target.checked)}
-          />
-        </div> */}
         <div id="create-button-div">
-          <label id="create-label" htmlFor="create" />
-          <button type="submit" id="create-button" htmlFor="create">
+          <label id="create-label" htmlFor="create-button" />
+          <button type="submit" id="create-button">
             Create
           </button>
         </div>

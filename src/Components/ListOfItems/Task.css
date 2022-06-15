@@ -1,3 +1,7 @@
+button {
+  cursor: pointer;
+}
+
 .task-container {
   margin-top: 0.5em;
   display: block;
@@ -7,16 +11,36 @@
   width: 20%;
 }
 
-#delete-btn-div {
+#interaction-div {
   display: flex;
+  /* justify-content: space-between; */
   justify-content: end;
 }
 
-#delete-button {
-  font-family: "Montserrat", sans-serif;
+#buttons {
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 0.1em;
   box-sizing: border-box;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
-  background-color: rgb(193, 67, 67);
+}
+
+#complete-button {
+  background-color: rgb(116, 242, 164);
+  margin-right: 0.1em;
+}
+
+#edit-button {
+  background-color: rgb(116, 156, 242);
+  margin-right: 0.1em;
+}
+
+#delete-button {
+  background-color: rgb(207, 84, 84);
 }
 
 #task-title {
@@ -28,4 +52,18 @@
 #task-description {
   display: flex;
   justify-content: start;
+  font-size: 0.8em;
+}
+
+#task-status {
+  display: inline-block;
+  margin-bottom: 0.2em;
+}
+
+#status-button {
+  display: flex;
+  justify-content: center;
+  padding: 0.1em;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  background-color: rgb(203, 161, 82);
 }
