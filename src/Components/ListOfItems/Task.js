@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Task.css";
 import { BsTrash, BsPencilSquare, BsCheck2 } from "react-icons/bs";
 
 const Task = (props) => {
-  console.log(props.title);
   const [title, setTitle] = useState(props.title);
   const [description, setDescription] = useState(props.description);
   const [status, setStatus] = useState(props.status);
@@ -12,7 +11,12 @@ const Task = (props) => {
   const [titleActive, setTitleActive] = useState("task-title");
   const [descriptionActive, setDescriptionActive] =
     useState("task-description");
-  console.log("state title", title);
+
+  // allows for new tasks to be created while allowing editing of existing ones
+  useEffect(() => {
+    setTitle(props.title);
+  }, [props.title]);
+
   const enableEdit = () => {
     // allows to edit task shown, but not the original obj
     setIsDisabled(!isDisabled);
@@ -41,6 +45,7 @@ const Task = (props) => {
           value={title}
           disabled={isDisabled}
           onChange={(e) => {
+            console.log("changing...");
             setTitle(e.target.value);
           }}
         ></input>

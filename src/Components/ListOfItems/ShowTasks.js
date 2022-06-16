@@ -3,7 +3,6 @@ import "./ShowTasks.css";
 
 const ShowTasks = (props) => {
   const deleteFtn = (index) => {
-    console.log("Index of task being deleted: ", index);
     props.onTaskDelete(index); // Think over again about where/how you get the ID for a task
   };
 
