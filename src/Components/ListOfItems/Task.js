@@ -1,13 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "./Task.css";
-import { BsTrash } from "react-icons/bs";
-import { BsPencilSquare } from "react-icons/bs";
-import { BsCheck2 } from "react-icons/bs";
+import { BsTrash, BsPencilSquare, BsCheck2 } from "react-icons/bs";
 
 const Task = (props) => {
-  console.log(props);
-
+  console.log(props.title);
   const [title, setTitle] = useState(props.title);
   const [description, setDescription] = useState(props.description);
   const [status, setStatus] = useState(props.status);
@@ -15,7 +12,7 @@ const Task = (props) => {
   const [titleActive, setTitleActive] = useState("task-title");
   const [descriptionActive, setDescriptionActive] =
     useState("task-description");
-
+  console.log("state title", title);
   const enableEdit = () => {
     // allows to edit task shown, but not the original obj
     setIsDisabled(!isDisabled);

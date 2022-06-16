@@ -6,6 +6,7 @@ input {
   font-family: "Montserrat", sans-serif;
   background-color: white;
   color: black;
+  max-width: 100%;
 }
 
 .task-container {
@@ -16,6 +17,12 @@ input {
   border-radius: 0.5em;
   padding: 1em;
   width: 20%;
+  box-shadow: 0;
+  transition: 0.5s;
+}
+
+.task-container:hover {
+  box-shadow: 0.2em 0.2em rgb(171, 171, 171);
 }
 
 .task-input {
@@ -28,7 +35,7 @@ input {
 
 #task-title {
   font-size: 1.2em;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.02em;
 }
 
 #task-title-active {

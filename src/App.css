@@ -1,3 +1,7 @@
+main {
+  margin-bottom: 1.5em;
+}
+
 .App {
   text-align: center;
 }
@@ -5,10 +9,23 @@
 #icon-ref {
   display: flex;
   justify-content: center;
+  margin-top: 5em;
   font-size: 0.7em;
-  width: 100%;
-  bottom: 0.5em;
-  position: absolute;
+  background-color: white;
+  max-width: 100%;
+  bottom: 0;
+  position: fixed;
   left: 0;
   right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+a:hover {
+  transition: 0.3s;
+  color: cadetblue;
 }

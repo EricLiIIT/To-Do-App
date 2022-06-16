@@ -30,9 +30,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To-Do List</h1>
-      <Form onTaskCreate={createTask} />
-      <ShowTasks taskArray={tasks} onTaskDelete={deleteTask} />
+      <main>
+        <h1>To-Do List</h1>
+        <Form onTaskCreate={createTask} />
+        <ShowTasks taskArray={tasks} onTaskDelete={deleteTask} />
+      </main>
       <div id="icon-ref">
         <a
           href="https://www.flaticon.com/free-icons/checklist"
