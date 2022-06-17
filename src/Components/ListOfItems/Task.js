@@ -2,11 +2,19 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./Task.css";
 import { BsTrash, BsPencilSquare, BsCheck2 } from "react-icons/bs";
+import { HiBan } from "react-icons/hi";
 
 const Task = (props) => {
   const [title, setTitle] = useState(props.title);
   const [description, setDescription] = useState(props.description);
   const [status, setStatus] = useState(props.status);
+  const [statusBtnColor, setStatusBtnColor] = useState("complete-button");
+  const [hoverStatus, setHoverStatus] = useState();
+
+  // To include text transition animation
+  const [statusStyles, setStatusStyles] = useState("task-status-incomplete");
+
+  // Enabling/disabling task editin
   const [isDisabled, setIsDisabled] = useState(true);
   const [titleActive, setTitleActive] = useState("task-title");
   const [descriptionActive, setDescriptionActive] =
@@ -15,7 +23,17 @@ const Task = (props) => {
   // allows for new tasks to be created while allowing editing of existing ones
   useEffect(() => {
     setTitle(props.title);
-  }, [props.title]);
+    setDescription(props.description);
+  }, [props.title, props.description]);
+
+  const onHover = () => {
+    if (status === "Incomplete") {
+      setHoverStatus("Mark task as complete");
+    }
+    if (status === "Complete") {
+      setHoverStatus("Mark task as incomplete");
+    }
+  };
 
   const enableEdit = () => {
     // allows to edit task shown, but not the original obj
@@ -32,11 +50,18 @@ const Task = (props) => {
   };
 
   const completeTask = () => {
-    console.log("Completed task");
+    if (status === "Incomplete") {
+      setStatus("Complete");
+      setStatusBtnColor("uncomplete-button");
+    }
+    if (status === "Complete") {
+      setStatus("Incomplete");
+      setStatusBtnColor("complete-button");
+    }
   };
 
   return (
-    <div className="task-container" id={props.title}>
+    <div className="task-container" title={props.title} id={props.title}>
       <div id="task-title-div">
         <input
           type="text"
@@ -48,6 +73,7 @@ const Task = (props) => {
             console.log("changing...");
             setTitle(e.target.value);
           }}
+          aria-label={title}
         ></input>
       </div>
       <div id="task-description-div">
@@ -60,25 +86,29 @@ const Task = (props) => {
           onChange={(e) => {
             setDescription(e.target.value);
           }}
+          aria-label={description}
         ></input>
       </div>
       <div id="task-buttons">
-        <div id="task-status">{status}</div>
+        <div id={statusStyles}>{status}</div>
         <label htmlFor="complete" />
         <button
           type="button"
           className="buttons"
-          id="complete-button"
+          id={statusBtnColor}
+          title={hoverStatus}
+          onMouseOver={onHover}
           aria-label="Complete"
           onClick={completeTask}
         >
-          <BsCheck2 />
+          {status === "Incomplete" ? <BsCheck2 /> : <HiBan />}
         </button>
         <label htmlFor="edit" />
         <button
           type="button"
           className="buttons"
           id="edit-button"
+          title="Edit task"
           aria-label="Edit"
           onClick={enableEdit}
         >
@@ -89,6 +119,7 @@ const Task = (props) => {
           type="button"
           className="buttons"
           id="delete-button"
+          title="Delete task"
           aria-label="Delete"
           onClick={() => props.onDelete()}
         >

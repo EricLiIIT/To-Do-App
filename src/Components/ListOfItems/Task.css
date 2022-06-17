@@ -73,6 +73,11 @@ input {
   margin-right: 0.1em;
 }
 
+#uncomplete-button {
+  background-color: rgb(242, 175, 116);
+  margin-right: 0.1em;
+}
+
 #edit-button {
   background-color: rgb(116, 156, 242);
   margin-right: 0.1em;
@@ -82,7 +87,7 @@ input {
   background-color: rgb(207, 84, 84);
 }
 
-#task-status {
+#task-status-incomplete {
   display: flex;
   padding: 0.3em;
   border: 0.1rem solid white;
@@ -90,4 +95,15 @@ input {
   align-items: center;
   font-size: 0.5em;
   font-style: italic;
+}
+
+#task-status-complete {
+  display: flex;
+  padding: 0.3em;
+  border: 0.1rem solid white;
+  margin-right: auto;
+  align-items: center;
+  font-size: 0.5em;
+  font-style: italic;
+  transition: 0.5s;
 }
