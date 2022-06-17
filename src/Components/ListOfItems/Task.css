@@ -31,11 +31,13 @@ input {
   border: 0.1rem solid white;
   transition: 0.5s;
   padding: 0.1rem 0.1rem;
+  margin: 0;
 }
 
 #task-title {
   font-size: 1.2em;
   margin-bottom: 0.02em;
+  width: 100%;
 }
 
 #task-title-active {
@@ -43,6 +45,7 @@ input {
   border: 0.1rem solid grey;
   transition: 0.5s;
   margin-bottom: 0.2em;
+  width: 100%;
 }
 
 #task-description {
@@ -71,20 +74,48 @@ input {
 #complete-button {
   background-color: rgb(116, 242, 164);
   margin-right: 0.1em;
+  transition: 1s;
+}
+
+#complete-button:hover {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  transition: 1s;
 }
 
 #uncomplete-button {
-  background-color: rgb(242, 175, 116);
+  background-color: rgb(237, 166, 51);
   margin-right: 0.1em;
+  transition: 1s;
+}
+
+#uncomplete-button:hover {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  transition: 1s;
 }
 
 #edit-button {
   background-color: rgb(116, 156, 242);
   margin-right: 0.1em;
+  transition: 1s;
+}
+
+#edit-button:hover {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  transition: 1s;
 }
 
 #delete-button {
   background-color: rgb(207, 84, 84);
+  transition: 1s;
+}
+
+#delete-button:hover {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  transition: 1s;
 }
 
 #task-status-incomplete {

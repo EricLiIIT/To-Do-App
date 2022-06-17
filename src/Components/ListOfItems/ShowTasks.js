@@ -13,6 +13,7 @@ const ShowTasks = (props) => {
         title={task.title}
         description={task.description}
         status={task.status}
+        label={task.label}
         onDelete={() => deleteFtn(index)}
       />
     </div>

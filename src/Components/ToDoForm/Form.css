@@ -29,6 +29,12 @@ button {
   border-width: 0.1em;
 }
 
+select {
+  font-family: "Montserrat", sans-serif;
+  border-radius: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 #form-container {
   display: flex;
   justify-content: center;
@@ -55,11 +61,6 @@ button {
   display: block;
 }
 
-#create-button-div {
-  display: flex;
-  justify-content: end;
-}
-
 #title-input,
 #description-input,
 #create-button {
@@ -69,14 +70,24 @@ button {
   margin-bottom: 0.5em;
 }
 
-#status-input,
-#status {
+#create-button-div {
   display: flex;
-  align-items: center;
+  justify-content: end;
 }
 
 #create-button {
   font-family: "Montserrat", sans-serif;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
-  /* background-color: #748ac2; */
+  background-color: #8098d3;
+  transition: 1.2s;
+}
+
+#create-button:focus {
+  background-color: #5c6b95;
+  transition: 1.2s;
+}
+
+#create-button:hover {
+  background-color: #5c6b95;
+  transition: 1.2s;
 }

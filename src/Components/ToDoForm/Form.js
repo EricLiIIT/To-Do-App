@@ -2,19 +2,33 @@ import { useState } from "react";
 import "./Form.css";
 
 const Form = (props) => {
+  let labels = ["Work", "Personal", "Finance"];
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [label, setLabel] = useState();
+
+  const handleLabel = (event) => {
+    setLabel(event.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setLabel(label);
     const task = {
       title: title,
       description: description,
       status: "Incomplete",
+      label: label,
     };
+
     props.onTaskCreate(task);
-    setTitle("");
-    setDescription("");
+
+    if (title && description) {
+      // Prevents form clearing with empty fields on submission
+      setTitle("");
+      setDescription("");
+    }
   };
 
   return (
@@ -27,7 +41,6 @@ const Form = (props) => {
           <input
             type="text"
             id="title-input"
-            htmlFor="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -39,10 +52,18 @@ const Form = (props) => {
           <textarea
             type="textarea"
             id="description-input"
-            htmlFor="decription"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+        </div>
+        <div id="dropdown">
+          <select value={label} onChange={handleLabel}>
+            {labels.map((label, index) => (
+              <option key={index} value={label}>
+                {label}
+              </option>
+            ))}
+          </select>
         </div>
         <div id="create-button-div">
           <label id="create-label" htmlFor="create-button" />

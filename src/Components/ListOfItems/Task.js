@@ -5,6 +5,7 @@ import { BsTrash, BsPencilSquare, BsCheck2 } from "react-icons/bs";
 import { HiBan } from "react-icons/hi";
 
 const Task = (props) => {
+  console.log(props.label);
   const [title, setTitle] = useState(props.title);
   const [description, setDescription] = useState(props.description);
   const [status, setStatus] = useState(props.status);
@@ -32,6 +33,12 @@ const Task = (props) => {
     }
     if (status === "Complete") {
       setHoverStatus("Mark task as incomplete");
+    }
+  };
+
+  const handleEnterKeyPress = (e) => {
+    if (e.key === "Enter") {
+      enableEdit();
     }
   };
 
@@ -73,6 +80,7 @@ const Task = (props) => {
             console.log("changing...");
             setTitle(e.target.value);
           }}
+          onKeyPress={handleEnterKeyPress}
           aria-label={title}
         ></input>
       </div>
@@ -86,6 +94,7 @@ const Task = (props) => {
           onChange={(e) => {
             setDescription(e.target.value);
           }}
+          onKeyPress={handleEnterKeyPress}
           aria-label={description}
         ></input>
       </div>
