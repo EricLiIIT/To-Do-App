@@ -1,3 +1,7 @@
+html {
+  padding-left: calc(100vw - 100%);
+}
+
 body {
   /* background-color: #919fc2; */
   display: flex;
@@ -6,6 +10,7 @@ body {
 
 a {
   text-decoration: none;
+  font-size: 1em;
   color: rgb(0, 0, 0);
   transition: 0.3s;
 }
@@ -13,21 +18,24 @@ a {
 a:hover {
   transition: 0.3s;
   color: cadetblue;
+  flex-shrink: 0;
+}
+
+main {
+  margin-bottom: 1em;
 }
 
 .App {
   text-align: center;
+  width: 100%;
 }
 
 #icon-ref {
-  display: flex;
-  justify-content: center;
-  margin-top: 5em;
+  padding-left: calc(100vw - 100%);
   font-size: 0.7em;
   background-color: white;
-  max-width: 100%;
-  bottom: 0;
   position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
 }

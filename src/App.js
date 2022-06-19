@@ -27,14 +27,16 @@ function App() {
         <Form onTaskCreate={createTask} />
         <ShowTasks taskArray={tasks} onTaskDelete={deleteTask} />
       </main>
-      <div id="icon-ref">
+      <footer id="icon-ref">
         <a
           href="https://www.flaticon.com/free-icons/checklist"
           title="checklist icons"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Checklist icons created by Freepik - Flaticon
         </a>
-      </div>
+      </footer>
     </div>
   );
 }

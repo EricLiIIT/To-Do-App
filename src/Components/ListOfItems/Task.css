@@ -6,7 +6,7 @@ input {
   font-family: "Montserrat", sans-serif;
   background-color: white;
   color: black;
-  max-width: 100%;
+  width: 100%;
 }
 
 .task-container {
@@ -19,7 +19,7 @@ input {
   width: 100%;
   box-shadow: 0;
   transition: 0.5s;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 #task {
@@ -43,6 +43,7 @@ input {
 .task-input {
   display: flex;
   justify-content: start;
+  box-sizing: border-box;
   border: 0.1rem solid white;
   transition: 0.5s;
   padding: 0.1rem 0.1rem;
@@ -65,11 +66,13 @@ input {
 
 #task-description {
   font-size: 0.8em;
+  margin-bottom: 0.3em;
 }
 
 #task-description-active {
   font-size: 0.8em;
   border: 0.1rem solid grey;
+  margin-bottom: 0.3em;
   transition: 0.5s;
 }
 
@@ -136,9 +139,8 @@ input {
 #task-status-incomplete {
   display: flex;
   padding: 0.3em;
-  border: 0.1rem solid white;
   margin-right: auto;
-  align-items: center;
+  align-items: top;
   font-size: 0.5em;
   font-style: italic;
   transition: 2s;
@@ -147,9 +149,8 @@ input {
 #task-status-complete {
   display: flex;
   padding: 0.3em;
-  border: 0.1rem solid white;
   margin-right: auto;
-  align-items: center;
+  align-items: top;
   font-size: 0.5em;
   font-style: italic;
   transition: 2s;
