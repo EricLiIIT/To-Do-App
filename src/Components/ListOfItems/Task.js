@@ -60,80 +60,86 @@ const Task = (props) => {
     if (status === "Incomplete") {
       setStatus("Complete");
       setStatusBtnColor("uncomplete-button");
+      setStatusStyles("task-status-complete");
     }
     if (status === "Complete") {
       setStatus("Incomplete");
       setStatusBtnColor("complete-button");
+      setStatusStyles("task-status-incomplete");
     }
   };
 
   return (
     <div className="task-container" title={props.title} id={props.title}>
-      <div id="task-title-div">
-        <input
-          type="text"
-          className="task-input"
-          id={titleActive}
-          value={title}
-          disabled={isDisabled}
-          onChange={(e) => {
-            console.log("changing...");
-            setTitle(e.target.value);
-          }}
-          onKeyPress={handleEnterKeyPress}
-          aria-label={title}
-        ></input>
-      </div>
-      <div id="task-description-div">
-        <input
-          type="text"
-          className="task-input"
-          id={descriptionActive}
-          value={description}
-          disabled={isDisabled}
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
-          onKeyPress={handleEnterKeyPress}
-          aria-label={description}
-        ></input>
-      </div>
-      <div id="task-buttons">
-        <div id={statusStyles}>{status}</div>
-        <label htmlFor="complete" />
-        <button
-          type="button"
-          className="buttons"
-          id={statusBtnColor}
-          title={hoverStatus}
-          onMouseOver={onHover}
-          aria-label="Complete"
-          onClick={completeTask}
-        >
-          {status === "Incomplete" ? <BsCheck2 /> : <HiBan />}
-        </button>
-        <label htmlFor="edit" />
-        <button
-          type="button"
-          className="buttons"
-          id="edit-button"
-          title="Edit task"
-          aria-label="Edit"
-          onClick={enableEdit}
-        >
-          <BsPencilSquare />
-        </button>
-        <label htmlFor="delete" />
-        <button
-          type="button"
-          className="buttons"
-          id="delete-button"
-          title="Delete task"
-          aria-label="Delete"
-          onClick={() => props.onDelete()}
-        >
-          <BsTrash />
-        </button>
+      <div id="label">{props.label}</div>
+      <div id="task">
+        <div id="task-title-div">
+          <input
+            type="text"
+            className="task-input"
+            id={titleActive}
+            value={title}
+            disabled={isDisabled}
+            onChange={(e) => {
+              console.log("changing...");
+              setTitle(e.target.value);
+            }}
+            onKeyPress={handleEnterKeyPress}
+            aria-label={title}
+          ></input>
+        </div>
+        <div id="task-description-div">
+          <input
+            type="text"
+            className="task-input"
+            id={descriptionActive}
+            value={description}
+            disabled={isDisabled}
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+            onKeyPress={handleEnterKeyPress}
+            aria-label={description}
+          ></input>
+        </div>
+
+        <div id="task-buttons">
+          <div id={statusStyles}>{status}</div>
+          <label htmlFor="complete" />
+          <button
+            type="button"
+            className="buttons"
+            id={statusBtnColor}
+            title={hoverStatus}
+            onMouseOver={onHover}
+            aria-label="Complete"
+            onClick={completeTask}
+          >
+            {status === "Incomplete" ? <BsCheck2 /> : <HiBan />}
+          </button>
+          <label htmlFor="edit" />
+          <button
+            type="button"
+            className="buttons"
+            id="edit-button"
+            title="Edit task"
+            aria-label="Edit"
+            onClick={enableEdit}
+          >
+            <BsPencilSquare />
+          </button>
+          <label htmlFor="delete" />
+          <button
+            type="button"
+            className="buttons"
+            id="delete-button"
+            title="Delete task"
+            aria-label="Delete"
+            onClick={() => props.onDelete()}
+          >
+            <BsTrash />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ const Form = (props) => {
   let labels = ["Work", "Personal", "Finance"];
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [label, setLabel] = useState();
+  const [label, setLabel] = useState(labels[0].toString());
 
   const handleLabel = (event) => {
     setLabel(event.target.value);

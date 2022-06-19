@@ -1,9 +1,24 @@
 body {
   /* background-color: #919fc2; */
+  display: flexbox;
+  justify-content: center;
+  max-width: 25%;
+  margin: auto;
 }
 
 main {
   margin-bottom: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+a:hover {
+  transition: 0.3s;
+  color: cadetblue;
 }
 
 .App {
@@ -21,15 +36,4 @@ main {
   position: fixed;
   left: 0;
   right: 0;
-}
-
-a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  transition: 0.3s;
-}
-
-a:hover {
-  transition: 0.3s;
-  color: cadetblue;
 }
