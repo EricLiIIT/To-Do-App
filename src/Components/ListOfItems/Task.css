@@ -80,8 +80,7 @@ input {
 
 .buttons {
   display: flex;
-  /* display: inline; */
-  padding: 0;
+  padding: 0.1em;
   box-sizing: border-box;
   border-width: 0.1em;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
@@ -90,48 +89,48 @@ input {
 #complete-button {
   background-color: rgb(116, 242, 164);
   margin-right: 0.1em;
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #complete-button:hover {
   padding-right: 0.5em;
   padding-left: 0.5em;
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #uncomplete-button {
   background-color: rgb(237, 166, 51);
   margin-right: 0.1em;
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #uncomplete-button:hover {
   padding-right: 0.5em;
   padding-left: 0.5em;
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #edit-button {
   background-color: rgb(116, 156, 242);
   margin-right: 0.1em;
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #edit-button:hover {
   padding-right: 0.5em;
   padding-left: 0.5em;
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #delete-button {
   background-color: rgb(207, 84, 84);
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #delete-button:hover {
   padding-right: 0.5em;
   padding-left: 0.5em;
-  transition: 1s;
+  transition: 0.8s;
 }
 
 #task-status-incomplete {

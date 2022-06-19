@@ -43,6 +43,7 @@ const Form = (props) => {
             id="title-input"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            required
           />
         </div>
         <div id="description">
@@ -54,6 +55,7 @@ const Form = (props) => {
             id="description-input"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           />
         </div>
         <div id="dropdown">

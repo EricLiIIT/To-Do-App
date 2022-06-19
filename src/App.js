@@ -7,14 +7,6 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const createTask = (task) => {
-    if (!task.title) {
-      alert("Please enter a title in your task");
-      return;
-    }
-    if (!task.description) {
-      alert("Please enter a description in your task");
-      return;
-    }
     // prevTasks automatically given by react (new var name, but it's just tasksArr that is most recent)
     setTasks((prevTasks) => {
       return [task, ...prevTasks]; // A NEW array is returned...

@@ -1,13 +1,7 @@
 body {
   /* background-color: #919fc2; */
-  display: flexbox;
+  display: flex;
   justify-content: center;
-  max-width: 25%;
-  margin: auto;
-}
-
-main {
-  margin-bottom: 1.5em;
 }
 
 a {
