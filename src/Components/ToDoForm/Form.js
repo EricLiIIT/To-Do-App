@@ -15,7 +15,10 @@ const Form = (props) => {
     e.preventDefault();
 
     setLabel(label);
+
+    let key = Math.random().toString() + title + description;
     const task = {
+      key: key,
       title: title,
       description: description,
       status: "Incomplete",

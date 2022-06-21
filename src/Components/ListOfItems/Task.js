@@ -5,7 +5,8 @@ import { BsTrash, BsPencilSquare, BsCheck2 } from "react-icons/bs";
 import { HiBan } from "react-icons/hi";
 
 const Task = (props) => {
-  console.log(props.label);
+  console.log("Index: ", props.id);
+  // console.log("Title: ", props.title, "Index: ", props.key);
   const [title, setTitle] = useState(props.title);
   const [description, setDescription] = useState(props.description);
   const [status, setStatus] = useState(props.status);
@@ -15,7 +16,7 @@ const Task = (props) => {
   // To include text transition animation
   const [statusStyles, setStatusStyles] = useState("task-status-incomplete");
 
-  // Enabling/disabling task editin
+  // Enabling/disabling task editing
   const [isDisabled, setIsDisabled] = useState(true);
   const [titleActive, setTitleActive] = useState("task-title");
   const [descriptionActive, setDescriptionActive] =
@@ -27,14 +28,15 @@ const Task = (props) => {
     setDescription(props.description);
   }, [props.title, props.description]);
 
-  const onHover = () => {
-    if (status === "Incomplete") {
-      setHoverStatus("Mark task as complete");
-    }
-    if (status === "Complete") {
-      setHoverStatus("Mark task as incomplete");
-    }
-  };
+  // Remove this and use vanilla html/css/js instead to prevent re-renders
+  // const onHover = () => {
+  //   if (status === "Incomplete") {
+  //     setHoverStatus("Mark task as complete");
+  //   }
+  //   if (status === "Complete") {
+  //     setHoverStatus("Mark task as incomplete");
+  //   }
+  // };
 
   const handleEnterKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -56,17 +58,30 @@ const Task = (props) => {
     }
   };
 
+  const updateStatus = (status, id) => {
+    console.log(props.id);
+    console.log("in task.js, ", status, id);
+    props.onStatusUpdate(status, id);
+  };
+
   const completeTask = () => {
+    // console.log(title);
     if (status === "Incomplete") {
       setStatus("Complete");
+      updateStatus(status, props.id);
       setStatusBtnColor("uncomplete-button");
       setStatusStyles("task-status-complete");
     }
     if (status === "Complete") {
       setStatus("Incomplete");
+      updateStatus(status, props.id);
       setStatusBtnColor("complete-button");
       setStatusStyles("task-status-incomplete");
     }
+  };
+
+  const deleteTask = () => {
+    props.onDelete();
   };
 
   return (
@@ -81,7 +96,7 @@ const Task = (props) => {
             value={title}
             disabled={isDisabled}
             onChange={(e) => {
-              console.log("changing...");
+              // console.log("changing...");
               setTitle(e.target.value);
             }}
             onKeyPress={handleEnterKeyPress}
@@ -111,7 +126,7 @@ const Task = (props) => {
             className="buttons"
             id={statusBtnColor}
             title={hoverStatus}
-            onMouseOver={onHover}
+            // onMouseOver={onHover}
             aria-label="Complete"
             onClick={completeTask}
           >
@@ -135,7 +150,7 @@ const Task = (props) => {
             id="delete-button"
             title="Delete task"
             aria-label="Delete"
-            onClick={() => props.onDelete()}
+            onClick={deleteTask}
           >
             <BsTrash />
           </button>
