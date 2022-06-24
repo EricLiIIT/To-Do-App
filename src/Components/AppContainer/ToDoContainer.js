@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "../ToDoForm/Form";
 import ShowTasks from "../ListOfItems/ShowTasks";
 import "./ToDoContainer.css";
 
 const ToDoContainer = () => {
   const [tasks, setTasks] = useState([]);
-
+  useEffect(() => {
+    const localData = localStorage.getItem("tasks");
+    if (localData !== null) setTasks(JSON.parse(localData));
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
   const createTask = (task) => {
     // prevTasks automatically given by react (new var name, but it's just tasksArr that is most recent)
     setTasks((prevTasks) => {
