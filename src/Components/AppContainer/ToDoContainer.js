@@ -5,13 +5,16 @@ import "./ToDoContainer.css";
 
 const ToDoContainer = () => {
   const [tasks, setTasks] = useState([]);
+
   useEffect(() => {
     const localData = localStorage.getItem("tasks");
     if (localData !== null) setTasks(JSON.parse(localData));
   }, []);
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
   const createTask = (task) => {
     // prevTasks automatically given by react (new var name, but it's just tasksArr that is most recent)
     setTasks((prevTasks) => {
@@ -27,16 +30,20 @@ const ToDoContainer = () => {
   };
 
   const updateStatus = (status, id) => {
-    console.log("in app.js", status, id); // update status in array @ this id
-    console.log(
-      "In app.js task at id: ",
-      id,
-      "task: ",
-      tasks.find((task) => task.key === id)
-    );
-    // let objIndex = tasks.findIndex((task) => task.id === id);
-    // tasks[objIndex].status = status;
-    // console.log("In app js, new status: ", tasks[objIndex].status);
+    // console.log("in app.js", status, id); // update status in array @ this id
+    // console.log(
+    //   "In app.js task at id: ",
+    //   id,
+    //   "task: ",
+    //   tasks.find((task) => task.key === id)
+    // );
+    const taskArr = [...tasks];
+    const task = tasks.find((task) => task.key === id); // assign specific task to variable
+    task.status = status; // update previous status with new status
+    const index = tasks.findIndex((task) => task.key === id);
+    tasks[index] = task;
+    console.log(taskArr);
+    setTasks(taskArr);
   };
 
   return (
