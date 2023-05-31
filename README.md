@@ -2,7 +2,7 @@
 
 This web app uses React and vanilla CSS for a to-do application.
 
-Hosted with Azure, check it out [here](https://lemon-coast-027285b10.1.azurestaticapps.net/).
+Check it out [here](https://ericliiit.github.io/To-Do-App)
 
 #### Initial form to create a task:
 
